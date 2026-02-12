@@ -45,7 +45,7 @@ const clients = [
 
 export function ClientsCarousel() {
     return (
-        <section className="py-12 bg-gray-50 overflow-hidden">
+        <section className="py-12 bg-white overflow-hidden">
             <div className="container mx-auto px-4 mb-8">
                 <h2 className="text-2xl font-bold text-center text-primary mb-2">
                     Clientes que confían en nosotros

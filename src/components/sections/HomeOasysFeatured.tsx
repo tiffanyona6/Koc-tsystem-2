@@ -4,7 +4,7 @@ import { ArrowRight, Lock, TrendingUp } from "lucide-react";
 
 export function HomeOasysFeatured() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50/20 border-y border-gray-100">
+        <section className="relative overflow-hidden bg-white border-y border-gray-100">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-[url('/images/pattern-grid.svg')] opacity-[0.03]" />
 
             <div className="container mx-auto px-4 py-8 md:py-16 lg:py-20 relative z-10">
@@ -17,32 +17,36 @@ export function HomeOasysFeatured() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                             </span>
-                            Proyecto Estratégico 2026
+                            PROYECTO ACTUAL 2026
                         </div>
 
                         <div className="flex items-center gap-4 mb-2">
                             <div className="h-8 w-1 bg-primary rounded-full hidden md:block"></div>
                             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-                                Oasys <span className="text-primary">Project</span>
+                                Oasis <span className="text-primary">Project</span>
                             </h2>
                         </div>
 
                         <h3 className="text-xl md:text-2xl font-medium text-gray-700 mb-6 leading-tight">
-                            Ahorro energético y optimización integral del agua.
+                            Eficiencia energética y optimización hídrica industrial
                         </h3>
 
                         <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
-                            Oasys Project es una solución innovadora desarrollada por KOC Technical System para maximizar la eficiencia energética y la gestión inteligente del agua en entornos industriales. <span className="block mt-4 text-sm font-semibold text-gray-500">Actualmente en fase de expansión y búsqueda de socios estratégicos.</span>
+                            Oasis Project es una solución tecnológica desarrollada por KOC Technical System para transformar el desperdicio térmico en ahorro medible, integrando recuperación energética y reutilización inteligente del agua en un único sistema industrial.
+                            <br /><br />
+                            Diseñado para generar eficiencia estructural, reducción de costes y sostenibilidad real en entornos industriales de alta demanda.
+                            <br />
+                            <span className="block mt-4 text-sm font-semibold text-gray-500">Actualmente en fase de expansión y búsqueda de socios estratégicos.</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/oasys">
+                            <Link href="/oasis-project">
                                 <Button size="lg" className="shadow-lg min-w-[220px] justify-between group">
-                                    Información para inversores
+                                    Solicitar dossier
                                     <Lock className="w-4 h-4 ml-2 opacity-70 group-hover:opacity-100 transition-opacity" />
                                 </Button>
                             </Link>
-                            <Link href="/oasys">
+                            <Link href="/oasis-project">
                                 <Button variant="outline" size="lg" className="min-w-[160px] group">
                                     Ver proyecto
                                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -61,7 +65,7 @@ export function HomeOasysFeatured() {
                                 <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-primary">
                                     <TrendingUp className="w-10 h-10" />
                                 </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-2">Oasys Innovation</h4>
+                                <h4 className="text-xl font-bold text-gray-900 mb-2">Oasis Project</h4>
                                 <p className="text-gray-500 text-sm">Visualización del proyecto en desarrollo</p>
                             </div>
 

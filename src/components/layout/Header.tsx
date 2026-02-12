@@ -3,16 +3,31 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
+interface NavLink {
+    name: string;
+    href: string;
+    subItems?: { name: string; href: string }[];
+}
+
+const navLinks: NavLink[] = [
     { name: "Inicio", href: "/" },
     { name: "Servicios", href: "/servicios" },
-    { name: "Proyectos", href: "/proyectos" },
-    { name: "Oasys", href: "/oasys" },
+    {
+        name: "Proyectos",
+        href: "/proyectos",
+        subItems: [
+            { name: "Oasis Project", href: "/oasis-project" },
+            { name: "TARGA KOC", href: "/proyectos" },
+            { name: "Marlenka 2.0 + Magic Box", href: "/proyectos" },
+            { name: "Sistema TWT", href: "/proyectos" },
+            { name: "Sistema Automático de Atemperado", href: "/proyectos" },
+        ]
+    },
     { name: "Nosotros", href: "/nosotros" },
     { name: "Contacto", href: "/contacto" },
 ];
@@ -20,6 +35,7 @@ const navLinks = [
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -52,20 +68,47 @@ export function Header() {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className={cn(
-                                    "text-sm lg:text-[18px] lg:leading-[1.2] lg:tracking-[0.3px] font-medium transition-colors hover:text-secondary text-gray-700"
+                            <div key={link.name} className="relative group">
+                                <Link
+                                    href={link.href}
+                                    className={cn(
+                                        "text-sm lg:text-[18px] lg:leading-[1.2] lg:tracking-[0.3px] font-medium transition-colors hover:text-primary text-gray-700 flex items-center gap-1",
+                                    )}
+                                >
+                                    {link.name}
+                                    {link.subItems && (
+                                        <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                                    )}
+                                </Link>
 
-                                    // isScrolled ? "text-gray-700" : "text-gray-800"
+                                {/* Desktop Dropdown */}
+                                {link.subItems && (
+                                    <div className="absolute top-full left-0 pt-4 w-64 hidden group-hover:block">
+                                        <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden py-2">
+                                            {link.subItems.map((subItem) => (
+                                                <Link
+                                                    key={subItem.name}
+                                                    href={subItem.href}
+                                                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                                                >
+                                                    {subItem.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
                                 )}
-                            >
-                                {link.name}
-                            </Link>
+                            </div>
                         ))}
 
                     </nav>
+
+                    <div className="hidden md:flex items-center ml-4">
+                        <Link href="/oasis-project">
+                            <Button size="sm" className="shadow-md bg-primary hover:bg-primary/90 text-white font-semibold px-6">
+                                Oasis Project
+                            </Button>
+                        </Link>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -89,15 +132,58 @@ export function Header() {
                     >
                         <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
                             {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-base font-medium text-gray-700 py-2 border-b border-gray-50 hover:text-secondary"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
+                                <div key={link.name} className="flex flex-col border-b border-gray-50 last:border-0">
+                                    <div className="flex items-center justify-between py-2">
+                                        <Link
+                                            href={link.href}
+                                            className="text-base font-medium text-gray-700 hover:text-primary flex-grow"
+                                            onClick={() => !link.subItems && setIsOpen(false)}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                        {link.subItems && (
+                                            <button
+                                                onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === link.name ? null : link.name)}
+                                                className="p-2 text-gray-500 hover:text-primary hover:bg-gray-50 rounded-full"
+                                            >
+                                                <ChevronDown className={cn("w-5 h-5 transition-transform duration-300", mobileSubmenuOpen === link.name ? "rotate-180" : "")} />
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {/* Mobile Accordion */}
+                                    {link.subItems && (
+                                        <AnimatePresence>
+                                            {mobileSubmenuOpen === link.name && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: "auto" }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    className="overflow-hidden bg-gray-50/50 rounded-lg mb-2"
+                                                >
+                                                    <div className="flex flex-col p-2 gap-1">
+                                                        {link.subItems.map((subItem) => (
+                                                            <Link
+                                                                key={subItem.name}
+                                                                href={subItem.href}
+                                                                className="text-sm font-medium text-gray-600 py-3 px-4 rounded-md hover:bg-gray-100/80 hover:text-primary transition-colors block"
+                                                                onClick={() => setIsOpen(false)}
+                                                            >
+                                                                {subItem.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    )}
+                                </div>
                             ))}
+                            <Link href="/oasis-project" onClick={() => setIsOpen(false)}>
+                                <Button className="w-full mt-2 bg-primary hover:bg-primary/90 text-white font-bold">
+                                    Oasis Project
+                                </Button>
+                            </Link>
 
                         </div>
                     </motion.div>

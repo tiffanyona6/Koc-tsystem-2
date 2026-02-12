@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <HomeOasysFeatured />
       <ServicesOverview />
       <HomeMetrics />
+      <HomeOasysFeatured />
       <ProjectsOverview />
       <ClientsCarousel />
       <CaeSection />

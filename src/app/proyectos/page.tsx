@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
     {
-        title: "Oasys project",
+        title: "Oasis Project",
         category: "Ahorro Energía + Agua",
         description: "Soluciones integrales para la optimización energética y gestión eficiente del agua en la industria.",
         image: null,

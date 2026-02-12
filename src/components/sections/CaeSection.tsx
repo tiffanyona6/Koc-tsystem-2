@@ -20,7 +20,7 @@ export function CaeSection() {
                 </p>
 
                 <Link href="/servicios">
-                    <Button className="bg-green-600 hover:bg-green-700 text-white shadow-md">
+                    <Button className="bg-green-600 text-white border-[1.5px] border-green-600 hover:bg-white hover:text-green-600 hover:border-green-600 transition-all duration-300 ease-in-out active:scale-[0.98] shadow-md">
                         Consultar sobre CAE
                     </Button>
                 </Link>
