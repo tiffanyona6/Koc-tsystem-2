@@ -7,7 +7,7 @@ export function HomeOasysFeatured() {
         <section className="relative overflow-hidden bg-white border-y border-gray-100">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-[url('/images/pattern-grid.svg')] opacity-[0.03]" />
 
-            <div className="container mx-auto px-4 py-8 md:py-16 lg:py-20 relative z-10">
+            <div className="container-custom section-padding relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
                     {/* Content Column (Left on Desktop) */}
@@ -40,7 +40,7 @@ export function HomeOasysFeatured() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/oasis-project">
+                            <Link href="/contacto">
                                 <Button size="lg" className="shadow-lg min-w-[220px] justify-between group bg-primary text-white border-2 border-primary hover:bg-white hover:text-primary transition-all duration-300">
                                     Solicitar dossier
                                     <Lock className="w-4 h-4 ml-2 opacity-70 group-hover:opacity-100 transition-opacity" />

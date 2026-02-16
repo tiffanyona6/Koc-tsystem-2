@@ -4,8 +4,8 @@ import { FileCheck } from "lucide-react";
 
 export function CaeSection() {
     return (
-        <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-50 border-t border-green-100">
-            <div className="container mx-auto px-4 text-center">
+        <section className="section-padding bg-gradient-to-br from-green-50 to-emerald-50 border-t border-green-100">
+            <div className="container-custom text-center">
                 <div className="inline-flex items-center justify-center p-3 bg-green-100 rounded-full mb-6">
                     <FileCheck className="text-green-600 w-8 h-8" />
                 </div>
@@ -19,7 +19,7 @@ export function CaeSection() {
                     <span className="font-semibold block mt-2">Rentabilidad directa para su industria.</span>
                 </p>
 
-                <Link href="/servicios">
+                <Link href="/servicios#cae">
                     <Button className="bg-green-600 text-white border-[1.5px] border-green-600 hover:bg-white hover:text-green-600 hover:border-green-600 transition-all duration-300 ease-in-out active:scale-[0.98] shadow-md">
                         Consultar sobre CAE
                     </Button>

@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Download, Droplets, Zap, TrendingUp, Factory, Settings, ShieldCheck, Hotel, WashingMachine, Utensils, Activity } from "lucide-react";
+import { ArrowRight, Download, Droplets, Zap, TrendingUp, Factory, Settings, ShieldCheck, Hotel, WashingMachine, Utensils, Activity, Home } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CarouselOasis } from "@/components/ui/CarouselOasis";
 
 // Animation variants
 const fadeInUp = {
@@ -56,64 +57,73 @@ export default function OasisContext() {
         <main className="min-h-screen bg-white font-poppins text-gray-800 overflow-x-hidden">
 
             {/* 1. HERO SECTION */}
-            <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
-                {/* Subtle Technical Background Pattern */}
-                <div className="absolute inset-0 z-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage: "radial-gradient(#384C9C 1px, transparent 1px)",
-                        backgroundSize: "32px 32px"
-                    }}>
-                </div>
+            <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gray-50">
+                {/* Background Decor */}
+                <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-blue-50/50 to-transparent skew-x-[-12deg] origin-top opacity-60 pointer-events-none" />
 
-                <div className="container mx-auto px-6 md:px-12 relative z-10">
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={fadeInUp}
-                        className="max-w-4xl"
-                    >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary font-semibold text-xs tracking-wide uppercase mb-6">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                            </span>
-                            PROYECTO ACTUAL 2026
-                        </div>
+                <div className="container-custom relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="h-10 w-1.5 bg-primary rounded-full hidden md:block"></div>
-                            <h1 className="text-[32px] md:text-[44px] lg:text-6xl font-bold text-gray-900 leading-tight font-montserrat">
-                                Oasis <span className="text-primary">Project</span>
-                            </h1>
-                        </div>
+                        {/* Text Content */}
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeInUp}
+                            className="w-full lg:w-1/2 relative z-20"
+                        >
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-100 shadow-sm text-primary font-semibold text-xs tracking-wide uppercase mb-6">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                                </span>
+                                PROYECTO ACTUAL 2026
+                            </div>
 
-                        <h2 className="text-xl md:text-2xl text-secondary font-medium mb-8 max-w-2xl">
-                            Eficiencia energética y optimización hídrica industrial
-                        </h2>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="h-12 w-1.5 bg-primary rounded-full hidden md:block shadow-sm"></div>
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight font-montserrat tracking-tight">
+                                    Oasis <span className="text-primary">Project</span>
+                                </h1>
+                            </div>
 
-                        <p className="text-base md:text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
-                            Oasis Project es una solución tecnológica desarrollada por KOC Technical System para transformar el desperdicio térmico en ahorro medible, integrando recuperación energética y reutilización inteligente del agua en un único sistema industrial.
-                            <br /><br />
-                            Diseñado para generar eficiencia estructural, reducción de costes y sostenibilidad real en entornos industriales de alta demanda.
-                            <br />
-                            <span className="block mt-4 text-sm font-semibold text-gray-500">Actualmente en fase de expansión y búsqueda de socios estratégicos.</span>
-                        </p>
+                            <h2 className="text-xl md:text-2xl text-secondary font-medium mb-6 max-w-xl">
+                                Eficiencia energética y optimización hídrica industrial
+                            </h2>
 
-                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                            <Button size="lg" className="w-full sm:w-auto bg-primary text-white border-2 border-primary hover:bg-white hover:text-primary transition-all duration-300 shadow-lg">
-                                Solicitar dossier
-                                {/* Import Lock from lucide-react if not already imported or available */}
-                                <ShieldCheck className="w-4 h-4 ml-2 opacity-70" />
-                            </Button>
+                            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
+                                <strong className="text-primary block mb-2">Proyecto a Medida (Innovación).</strong>
+                                Oasis Project es una solución tecnológica desarrollada por KOC Technical System para transformar el desperdicio térmico en ahorro medible, integrando recuperación energética y reutilización inteligente del agua en un único sistema industrial.
+                                <br /><br />
+                                Diseñado para generar eficiencia estructural, reducción de costes y sostenibilidad real en entornos industriales de alta demanda.
+                                <br />
+                                <span className="block mt-4 text-sm font-semibold text-gray-500 bg-white/50 w-fit px-2 py-1 rounded">Actualmente en fase de expansión y búsqueda de socios estratégicos.</span>
+                            </p>
 
-                        </div>
-                    </motion.div>
+                            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                                <Button size="lg" className="w-full sm:w-auto bg-primary text-white border-2 border-primary hover:bg-white hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl text-lg px-8">
+                                    Solicitar dossier
+                                    <ShieldCheck className="w-5 h-5 ml-2 opacity-80" />
+                                </Button>
+                            </div>
+                        </motion.div>
+
+                        {/* Visual Content - Carousel */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="w-full lg:w-1/2 relative flex items-center justify-center lg:justify-end h-[400px] lg:h-[500px]"
+                        >
+                            <CarouselOasis />
+                        </motion.div>
+
+                    </div>
                 </div>
             </section>
 
             {/* 2. CONTEXT - EL RETO INDUSTRIAL */}
-            <section className="py-20 md:py-28 bg-white">
-                <div className="container mx-auto px-6 md:px-12">
+            <section className="section-padding bg-white">
+                <div className="container-custom">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -162,34 +172,25 @@ export default function OasisContext() {
             </section>
 
             {/* 3. LA SOLUCIÓN OASYS */}
-            <section className="py-20 md:py-28 bg-gray-900 text-white relative overflow-hidden">
-                {/* Background Accent */}
-                <div className="absolute inset-0 z-0 opacity-10"
-                    style={{
-                        backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-                        backgroundSize: "40px 40px"
-                    }}>
-                </div>
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent"></div>
-
-                <div className="container mx-auto px-6 md:px-12 relative z-10">
+            <section className="section-padding bg-gray-50 relative overflow-hidden">
+                <div className="container-custom relative z-10">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={fadeInUp}
-                        className="mb-16"
+                        className="mb-12"
                     >
-                        <span className="text-secondary font-bold tracking-wider uppercase mb-2 block">Nuestra Solución</span>
-                        <h2 className="text-3xl md:text-[42px] font-bold mb-6 font-montserrat">
+                        <span className="text-secondary font-bold tracking-wider uppercase mb-2 block text-sm">Nuestra Solución</span>
+                        <h2 className="text-3xl md:text-[42px] font-bold mb-6 font-montserrat text-primary leading-tight">
                             Recuperación térmica + Reutilización hídrica
                         </h2>
-                        <p className="text-gray-300 text-base md:text-lg max-w-3xl">
+                        <p className="text-gray-600 text-base md:text-lg max-w-3xl leading-relaxed">
                             Oasis Project integra en un único sistema industrial tecnologías avanzadas para transformar flujos de residuos en recursos valiosos.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                         {[
                             { title: "Recuperación energética para ACS", desc: "Aprovechamiento del calor residual para agua caliente sanitaria." },
                             { title: "Tratamiento avanzado de aguas", desc: "Sistemas de filtración y purificación de aguas grises." },
@@ -207,11 +208,10 @@ export default function OasisContext() {
                                     hidden: { opacity: 0, y: 20 },
                                     visible: { opacity: 1, y: 0, transition: { delay: index * 0.1 } }
                                 }}
-                                className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-secondary/50 transition-colors"
+                                className="bg-white p-8 rounded-xl h-full flex flex-col justify-start border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 group hover:border-blue-100"
                             >
-                                <div className="h-1 w-12 bg-secondary mb-4 rounded-full"></div>
-                                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                                <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+                                <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors leading-tight">{feature.title}</h3>
+                                <p className="text-gray-600 text-[15px] leading-relaxed font-light">{feature.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -219,8 +219,8 @@ export default function OasisContext() {
             </section>
 
             {/* 4. RESULTADOS ESPERADOS */}
-            <section className="py-20 md:py-28 bg-white">
-                <div className="container mx-auto px-6 md:px-12">
+            <section className="section-padding bg-white">
+                <div className="container-custom">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mb-16">
                         {[
                             { value: 85, suffix: "%", label: "Ahorro energético en ACS" },
@@ -243,31 +243,13 @@ export default function OasisContext() {
                         ))}
                     </div>
 
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInUp}
-                        className="bg-gray-50 rounded-2xl p-8 md:p-12 text-center border border-gray-100 max-w-4xl mx-auto"
-                    >
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4">Impacto Doble</h3>
-                        <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
-                            <div className="flex items-center gap-3 justify-center">
-                                <TrendingUp className="text-secondary w-6 h-6" />
-                                <span className="text-lg font-medium text-gray-700">Reducción de costes estructurales</span>
-                            </div>
-                            <div className="flex items-center gap-3 justify-center">
-                                <ShieldCheck className="text-secondary w-6 h-6" />
-                                <span className="text-lg font-medium text-gray-700">Mejora directa posicionamiento ESG</span>
-                            </div>
-                        </div>
-                    </motion.div>
+
                 </div>
             </section>
 
             {/* 5. MOMENTO DE MERCADO */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-6 md:px-12">
+            <section className="section-padding bg-gray-50">
+                <div className="container-custom">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -283,7 +265,7 @@ export default function OasisContext() {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 max-w-5xl mx-auto">
                         {[
                             "Incremento sostenido del coste energético",
                             "Escasez hídrica estructural",
@@ -299,9 +281,9 @@ export default function OasisContext() {
                                     hidden: { opacity: 0, scale: 0.95 },
                                     visible: { opacity: 1, scale: 1, transition: { delay: index * 0.1 } }
                                 }}
-                                className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-l-primary flex items-center"
+                                className="bg-white p-6 lg:p-10 rounded-xl shadow-sm border-l-4 border-l-primary flex items-center justify-center text-center h-full hover:shadow-md transition-shadow"
                             >
-                                <p className="font-semibold text-gray-800">{item}</p>
+                                <p className="font-normal text-gray-800 text-lg lg:text-xl">{item}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -309,8 +291,8 @@ export default function OasisContext() {
             </section>
 
             {/* 6. SECTORES OBJETIVO */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6 md:px-12">
+            <section className="section-padding bg-white">
+                <div className="container-custom">
                     <motion.h2
                         initial="hidden"
                         whileInView="visible"
@@ -321,12 +303,14 @@ export default function OasisContext() {
                         Sectores Objetivo
                     </motion.h2>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-px max-w-6xl mx-auto lg:bg-gray-100 lg:border lg:border-gray-100 lg:rounded-2xl lg:overflow-hidden lg:shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)]">
                         {[
+                            { name: "Sector Industrial", icon: Factory },
                             { name: "Industria Agroalimentaria", icon: Utensils },
                             { name: "Lavanderías Industriales", icon: WashingMachine },
                             { name: "Sector Hotelero", icon: Hotel },
-                            { name: "Sector Sanitario", icon: Activity }
+                            { name: "Sector Sanitario", icon: Activity },
+                            { name: "Sector Residencial", icon: Home }
                         ].map((sector, index) => (
                             <motion.div
                                 key={index}
@@ -334,12 +318,12 @@ export default function OasisContext() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                                 variants={fadeInUp}
-                                className="flex flex-col items-center text-center p-6 hover:bg-gray-50 rounded-xl transition-colors"
+                                className="flex flex-col items-center text-center p-6 lg:p-12 hover:bg-gray-50 transition-colors lg:bg-white"
                             >
-                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
-                                    <sector.icon className="w-8 h-8" />
+                                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4 lg:mb-6">
+                                    <sector.icon className="w-8 h-8 lg:w-10 lg:h-10" />
                                 </div>
-                                <h3 className="font-bold text-gray-800">{sector.name}</h3>
+                                <h3 className="font-normal text-gray-800 text-base lg:text-lg max-w-[120px] lg:max-w-none mx-auto">{sector.name}</h3>
                             </motion.div>
                         ))}
                     </div>
@@ -347,8 +331,8 @@ export default function OasisContext() {
             </section>
 
             {/* 7. MODELO DE DESPLIEGUE */}
-            <section className="py-20 bg-gray-900 text-white">
-                <div className="container mx-auto px-6 md:px-12 text-center">
+            <section className="section-padding bg-gray-50 text-gray-900">
+                <div className="container-custom text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -357,46 +341,57 @@ export default function OasisContext() {
                         className="mb-12"
                     >
                         <h2 className="text-3xl md:text-[42px] font-bold mb-6 font-montserrat">Modelo de Despliegue</h2>
-                        <p className="text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-gray-600 max-w-2xl mx-auto">
                             Arquitectura pensada para crecimiento sostenido mediante un modelo híbrido.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left max-w-5xl mx-auto">
-                        {[
-                            "Ingeniería aplicada",
-                            "Tecnología industrial modular",
-                            "Servicio técnico especializado",
-                            "Monitorización continua"
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                variants={fadeInUp}
-                                className="bg-gray-800 p-6 rounded-lg border border-gray-700"
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                                    <span className="font-medium text-gray-200">{item}</span>
-                                </div>
-                            </motion.div>
-                        ))}
+                    <div className="relative max-w-6xl mx-auto">
+                        {/* Connecting Line (Desktop) */}
+                        <div className="hidden lg:block absolute top-[28px] left-[12%] right-[12%] h-0.5 bg-gray-200 z-0" />
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 relative z-10">
+                            {[
+                                "Ingeniería aplicada",
+                                "Tecnología industrial modular",
+                                "Servicio técnico especializado",
+                                "Monitorización continua"
+                            ].map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeInUp}
+                                    className="flex flex-col items-center group"
+                                >
+                                    {/* Mobile Card */}
+                                    <div className="lg:hidden bg-white p-6 rounded-xl border border-blue-100 shadow-sm w-full flex items-center gap-3">
+                                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                                        <span className="font-medium text-gray-800">{item}</span>
+                                    </div>
+
+                                    {/* Desktop Node */}
+                                    <div className="hidden lg:flex flex-col items-center text-center w-full px-4">
+                                        <div className="w-14 h-14 bg-white rounded-full border-4 border-primary shadow-sm mb-6 flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-300">
+                                            <div className="w-4 h-4 bg-primary rounded-full"></div>
+                                        </div>
+                                        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm w-full min-h-[100px] flex items-center justify-center group-hover:border-blue-200 group-hover:shadow-md transition-all">
+                                            <span className="font-normal text-gray-800 text-lg leading-tight">{item}</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* 8. BLOQUE FINAL - INVERSIÓN */}
-            <section className="py-24 bg-gradient-to-br from-primary to-blue-900 text-white text-center relative overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-10"
-                    style={{
-                        backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
-                        backgroundSize: "24px 24px"
-                    }}>
-                </div>
+            <section className="section-padding bg-primary text-white text-center relative overflow-hidden">
+                {/* Clean Solid Background */}
 
-                <div className="container mx-auto px-6 md:px-12 relative z-10">
+                <div className="container-custom relative z-10">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -404,15 +399,15 @@ export default function OasisContext() {
                         variants={fadeInUp}
                         className="max-w-4xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-[42px] font-bold mb-6 font-montserrat">
+                        <h2 className="text-3xl md:text-[42px] font-bold mb-4 font-montserrat">
                             Oportunidad estratégica de participación
                         </h2>
-                        <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                             Oasis Project representa una solución tecnológica alineada con la eficiencia, la sostenibilidad y la rentabilidad industrial.
                         </p>
 
-                        <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 text-lg px-8 py-6 h-auto shadow-xl font-bold">
-                            Solicitar dossier completo
+                        <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 h-auto shadow-xl font-bold">
+                            Solicitar dossier
                         </Button>
 
                         <p className="mt-6 text-sm text-blue-200 opacity-80">

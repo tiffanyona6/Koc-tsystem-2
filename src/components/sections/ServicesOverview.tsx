@@ -36,8 +36,8 @@ const services = [
 
 export function ServicesOverview() {
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4">
+        <section className="section-padding bg-white">
+            <div className="container-custom">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                     <div className="max-w-2xl">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -57,9 +57,8 @@ export function ServicesOverview() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service, index) => (
-                        <Link
+                        <div
                             key={index}
-                            href={service.href}
                             className="group block p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300"
                         >
                             <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors", service.color)}>
@@ -71,10 +70,8 @@ export function ServicesOverview() {
                             <p className="text-gray-600 mb-6 leading-relaxed">
                                 {service.description}
                             </p>
-                            <span className="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                                Saber más <ArrowRight className="ml-2 h-4 w-4" />
-                            </span>
-                        </Link>
+
+                        </div>
                     ))}
                 </div>
             </div>

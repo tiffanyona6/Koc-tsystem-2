@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function PrivacidadPage() {
     return (
         <main className="min-h-screen font-poppins text-gray-800 bg-white pt-32 pb-20 md:pt-36">
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container-custom">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-8 border-b border-gray-100 pb-8 uppercase">
                         Política de Privacidad
@@ -25,7 +25,7 @@ export default function PrivacidadPage() {
                                     <li><span className="font-semibold text-gray-900">CIF:</span> B24790644</li>
                                     <li><span className="font-semibold text-gray-900">Domicilio:</span> C/Chillida Nº4 Entrep. Edif. Carrida C.P 04720 - Roquetas de Mar - Almería</li>
                                     <li><span className="font-semibold text-gray-900">Teléfono:</span> 606442514</li>
-                                    <li><span className="font-semibold text-gray-900">Email para comunicaciones en materia de Protección de datos:</span> <a href="mailto:joseantonio@koctsystem.com" className="text-primary hover:underline">joseantonio@koctsystem.com</a></li>
+                                    <li><span className="font-semibold text-gray-900">Email para comunicaciones en materia de Protección de datos:</span> <a href="mailto:info@koctsystem.com" className="text-primary hover:underline">info@koctsystem.com</a></li>
                                 </ul>
                             </div>
 
@@ -121,7 +121,7 @@ export default function PrivacidadPage() {
                             <div>
                                 <h3 className="text-xl font-bold text-gray-800 mb-3 font-montserrat">6.1. ¿Cómo ejercitar mis derechos?</h3>
                                 <p>
-                                    Para ejercer sus derechos, debe dirigirse al responsable, solicitando el correspondiente formulario para el ejercicio del derecho elegido. Opcionalmente, puede acudir a la Autoridad de Control competente para obtener información adicional acerca de sus derechos. Los datos de contacto para el ejercicio de sus derechos son el teléfono 606442514 y el correo electrónico: <a href="mailto:joseantonio@koctsystem.com" className="text-primary hover:underline">joseantonio@koctsystem.com</a>. Recuerde acompañar una copia de un documento que nos permita identificarle.
+                                    Para ejercer sus derechos, debe dirigirse al responsable, solicitando el correspondiente formulario para el ejercicio del derecho elegido. Opcionalmente, puede acudir a la Autoridad de Control competente para obtener información adicional acerca de sus derechos. Los datos de contacto para el ejercicio de sus derechos son el teléfono 606442514 y el correo electrónico: <a href="mailto:info@koctsystem.com" className="text-primary hover:underline">info@koctsystem.com</a>. Recuerde acompañar una copia de un documento que nos permita identificarle.
                                 </p>
                             </div>
                         </section>

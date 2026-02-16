@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function AvisoLegalPage() {
     return (
         <main className="min-h-screen font-poppins text-gray-800 bg-white pt-32 pb-20 md:pt-36">
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container-custom">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-8 border-b border-gray-100 pb-8">
                         Aviso Legal
@@ -30,7 +30,7 @@ export default function AvisoLegalPage() {
                                     <li><span className="font-semibold text-gray-900">NIF:</span> B24790644</li>
                                     <li><span className="font-semibold text-gray-900">Teléfono:</span> 606442514</li>
                                     <li><span className="font-semibold text-gray-900">Fax:</span></li>
-                                    <li><span className="font-semibold text-gray-900">e-Mail:</span> <a href="mailto:joseantonio@koctsystem.com" className="text-primary hover:underline">joseantonio@koctsystem.com</a></li>
+                                    <li><span className="font-semibold text-gray-900">e-Mail:</span> <a href="mailto:info@koctsystem.com" className="text-primary hover:underline">info@koctsystem.com</a></li>
                                     <li className="pt-2"><span className="font-semibold text-gray-900">Datos registrales:</span></li>
                                     <li><span className="font-semibold text-gray-900">Pagina Web:</span> <a href="https://www.koctsystem.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.koctsystem.com</a></li>
                                 </ul>

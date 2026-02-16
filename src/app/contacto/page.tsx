@@ -7,21 +7,19 @@ export default function ContactPage() {
             {/* 1. HERO SECTION */}
             <section className="pt-32 pb-10 md:pt-36 md:pb-16 bg-gray-50 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-2/3 md:w-1/3 h-full bg-[#384C9C]/5 skew-x-12 transform origin-top-right pointer-events-none" />
-                <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="max-w-[1200px] mx-auto">
-                        <div className="max-w-4xl">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat text-primary mb-6 leading-tight">
-                                Contacto
-                            </h1>
-                            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl font-light">
-                                Estamos aquí para ayudarle. <span className="hidden md:inline">Cuéntenos su proyecto o necesidad y le responderemos con la mayor brevedad.</span>
-                            </p>
-                        </div>
+                <div className="container-custom relative z-10">
+                    <div className="max-w-4xl">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat text-primary mb-6 leading-tight">
+                            Contacto
+                        </h1>
+                        <p className="text-xl md:text-2xl text-gray-600 max-w-2xl font-light">
+                            Estamos aquí para ayudarle. <span className="hidden md:inline">Cuéntenos su proyecto o necesidad y le responderemos con la mayor brevedad.</span>
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <div className="container mx-auto px-4 py-20">
+            <div className="container-custom section-padding">
                 <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
                     {/* Left Column: Cards */}
                     <div className="lg:col-span-1 space-y-8">
@@ -114,6 +112,6 @@ export default function ContactPage() {
                     ></iframe>
                 </div>
             </div>
-        </main>
+        </main >
     );
 }

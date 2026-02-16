@@ -8,7 +8,7 @@ const projects = [
         title: "Oasis Project",
         category: "Ahorro Energía + Agua",
         description: "Soluciones integrales para la optimización energética y gestión eficiente del agua en la industria.",
-        image: null,
+        image: "/images/oasis-hero-official.png",
         href: "/oasis-project",
         badge: "Proyecto Estratégico",
     },
@@ -30,8 +30,8 @@ const projects = [
 
 export function ProjectsOverview() {
     return (
-        <section className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
+        <section className="section-padding bg-gray-50">
+            <div className="container-custom">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
                         Proyectos Destacados

@@ -20,8 +20,8 @@ export default function Home() {
       <CaeSection />
 
       {/* Quick Contact CTA */}
-      <section className="py-20 bg-primary text-white text-center">
-        <div className="container mx-auto px-4">
+      <section className="section-padding bg-primary text-white text-center">
+        <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Hablamos de su proyecto?</h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             Contacte con nuestro equipo técnico para una valoración inicial sin compromiso.

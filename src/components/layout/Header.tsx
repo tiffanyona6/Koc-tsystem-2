@@ -22,10 +22,10 @@ const navLinks: NavLink[] = [
         href: "/proyectos",
         subItems: [
             { name: "Oasis Project", href: "/oasis-project" },
-            { name: "TARGA KOC", href: "/proyectos" },
-            { name: "Marlenka 2.0 + Magic Box", href: "/proyectos" },
-            { name: "Sistema TWT", href: "/proyectos" },
-            { name: "Sistema Automático de Atemperado", href: "/proyectos" },
+            { name: "TARGA KOC", href: "/targa-koc" },
+            { name: "Marlenka 2.0 + Magic Box", href: "/marlenka-magic-box" },
+            { name: "Sistema TWT", href: "/sistema-twt" },
+            { name: "Sistema Automático de Atemperado", href: "/sistema-atemperado" },
         ]
     },
     { name: "Nosotros", href: "/nosotros" },
@@ -52,7 +52,7 @@ export function Header() {
                 // isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
             )}
         >
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container-custom">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="relative h-20 w-72 md:h-20 md:w-64">

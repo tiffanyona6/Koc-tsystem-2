@@ -167,6 +167,7 @@ export function ContactForm() {
                         onChange={handleChange}
                     >
                         <option value="">Seleccionar...</option>
+                        <option value="oasis">Solicitar dossier Oasis Project</option>
                         <option value="energia">Energía y Descarbonización</option>
                         <option value="agua">Ciclo Integral del Agua</option>
                         <option value="termico">Control Térmico y Humedad</option>

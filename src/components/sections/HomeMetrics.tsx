@@ -37,8 +37,8 @@ function MetricItem({ value, label, prefix = "+" }: MetricItemProps) {
 
 export function HomeMetrics() {
     return (
-        <section className="w-full bg-gray-50 border-y border-gray-100 py-16 md:py-24 my-16">
-            <div className="container mx-auto px-4 max-w-6xl">
+        <section className="w-full bg-gray-50 border-y border-gray-100 section-padding my-16">
+            <div className="container-custom">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                     {/* Left Column: Text + CTA */}
