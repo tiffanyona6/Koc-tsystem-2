@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased font-sans text-gray-900 bg-white`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased font-poppins text-gray-900 bg-white`}
       >
         <Header />
         {children}

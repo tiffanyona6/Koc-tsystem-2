@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Handshake, Lightbulb, Leaf } from "lucide-react";
 import { AboutImageGallery } from "@/components/ui/AboutImageGallery";
+import { ClientsCarousel } from "@/components/sections/ClientsCarousel";
 
 export default function AboutPage() {
     return (
@@ -24,20 +25,21 @@ export default function AboutPage() {
 
             {/* 2. PRESENTATION BLOCK - "Modern Engineering" */}
             {/* 2. PRESENTATION BLOCK - "Modern Engineering" */}
-            <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+            {/* 2. PRESENTATION BLOCK - "Modern Engineering" */}
+            <section className="section-padding bg-white relative overflow-hidden">
                 <div className="container-custom">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
                         {/* Left Column - Content */}
                         <div className="order-1 lg:order-1 space-y-6 md:space-y-8">
                             <div>
-                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight font-montserrat">
                                     Cómo intervenimos en la industria
                                 </h2>
                                 <div className="w-14 h-0.5 bg-primary mt-4 mb-6"></div>
                             </div>
 
-                            <div className="text-lg text-gray-600 leading-relaxed space-y-6 text-left">
+                            <div className="text-lg text-gray-800 leading-relaxed space-y-6 text-left">
                                 <p>
                                     Koc Technical System es una firma de ingeniería aplicada que interviene directamente en procesos industriales donde la eficiencia es determinante.
                                 </p>
@@ -103,7 +105,7 @@ export default function AboutPage() {
                                 </div>
                                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 font-montserrat md:mt-6">Misión</h3>
                             </div>
-                            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                            <p className="text-base md:text-lg text-gray-800 leading-relaxed">
                                 Optimizar energía, agua y temperatura en procesos industriales, convirtiendo la eficiencia en ahorro monetizable (CAE).
                             </p>
                         </div>
@@ -116,7 +118,7 @@ export default function AboutPage() {
                                 </div>
                                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 font-montserrat md:mt-6">Visión</h3>
                             </div>
-                            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                            <p className="text-base md:text-lg text-gray-800 leading-relaxed">
                                 Ser referente técnico en eficiencia industrial transformada en valor económico sostenible.
                             </p>
                         </div>
@@ -124,6 +126,9 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* 5. CLIENTS CAROUSEL */}
+            <ClientsCarousel />
 
         </main >
     );

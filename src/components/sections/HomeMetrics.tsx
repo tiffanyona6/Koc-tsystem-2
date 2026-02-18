@@ -25,21 +25,21 @@ function MetricItem({ value, label, prefix = "+" }: MetricItemProps) {
     }, [isInView, value, count]);
 
     return (
-        <div ref={ref} className="w-full max-w-[380px] mx-auto lg:mx-0 bg-white rounded-xl py-6 px-7 shadow-sm border border-blue-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-            <div className="text-4xl md:text-5xl lg:text-[48px] lg:leading-[1.1] font-semibold text-primary mb-2 flex items-center">
+        <div ref={ref} className="w-full bg-white rounded-xl py-6 px-7 shadow-sm border border-blue-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
+            <div className="text-5xl md:text-5xl lg:text-6xl font-medium tracking-tight text-primary mb-2 flex items-center justify-center font-montserrat">
                 <span>{prefix}</span>
                 <motion.span>{rounded}</motion.span>
             </div>
-            <div className="text-gray-600 font-medium text-lg lg:text-[16px]">{label}</div>
+            <div className="text-gray-800 font-medium text-lg lg:text-[16px]">{label}</div>
         </div>
     );
 }
 
 export function HomeMetrics() {
     return (
-        <section className="w-full bg-gray-50 border-y border-gray-100 section-padding my-16">
+        <section className="section-padding bg-gray-50 border-y border-gray-100">
             <div className="container-custom">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Left Column: Text + CTA */}
                     <div className="flex flex-col justify-center text-left">
@@ -57,7 +57,7 @@ export function HomeMetrics() {
                     </div>
 
                     {/* Right Column: Key Metrics Stack */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 w-full max-w-[400px] lg:mx-0 mx-auto lg:ml-auto">
                         <MetricItem value={26} label="Años de experiencia" />
                         <MetricItem value={100} label="Clientes que confían" />
                         <MetricItem value={200} label="Proyectos llave en mano" />

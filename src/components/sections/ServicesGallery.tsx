@@ -29,7 +29,7 @@ export function ServicesGallery() {
             } else if (window.innerWidth < 1024) {
                 setItemsPerView(2);
             } else {
-                setItemsPerView(3);
+                setItemsPerView(2);
             }
         };
 
@@ -98,19 +98,19 @@ export function ServicesGallery() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-secondary font-semibold text-xs tracking-wide uppercase mb-4">
                         Galería
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 font-montserrat mb-4">Nuestro trabajo</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-montserrat mb-6">Nuestro trabajo</h2>
+                    <p className="text-gray-400 font-light text-lg max-w-2xl mx-auto">
                         Detalles de nuestras intervenciones técnicas en campo.
                     </p>
                 </div>
 
-                <div className="relative group px-0 md:px-12">
-                    {/* Desktop Arrows */}
+                {/* Desktop Carousel (>= md) */}
+                <div className="hidden md:block relative group px-12">
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
                         className={cn(
-                            "absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-lg border border-gray-100 text-gray-700 hover:text-primary hover:border-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hidden md:flex"
+                            "absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-lg border border-gray-100 text-gray-700 hover:text-primary hover:border-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex"
                         )}
                         aria-label="Anterior imagen"
                     >
@@ -121,33 +121,12 @@ export function ServicesGallery() {
                         onClick={nextSlide}
                         disabled={currentIndex >= maxIndex}
                         className={cn(
-                            "absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-lg border border-gray-100 text-gray-700 hover:text-primary hover:border-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hidden md:flex"
+                            "absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-lg border border-gray-100 text-gray-700 hover:text-primary hover:border-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex"
                         )}
                         aria-label="Siguiente imagen"
                     >
                         <ChevronRight className="w-6 h-6" />
                     </button>
-
-                    {/* Mobile Arrows Overlay */}
-                    <div className="md:hidden absolute inset-y-0 left-0 flex items-center z-10 pl-2 pointer-events-none">
-                        <button
-                            onClick={prevSlide}
-                            disabled={currentIndex === 0}
-                            className="bg-white/90 p-2 rounded-full shadow-md text-gray-800 disabled:opacity-30 pointer-events-auto"
-                        >
-                            <ChevronLeft className="w-5 h-5" />
-                        </button>
-                    </div>
-                    <div className="md:hidden absolute inset-y-0 right-0 flex items-center z-10 pr-2 pointer-events-none">
-                        <button
-                            onClick={nextSlide}
-                            disabled={currentIndex >= maxIndex}
-                            className="bg-white/90 p-2 rounded-full shadow-md text-gray-800 disabled:opacity-30 pointer-events-auto"
-                        >
-                            <ChevronRight className="w-5 h-5" />
-                        </button>
-                    </div>
-
 
                     <div className="overflow-hidden w-full">
                         <motion.div
@@ -161,14 +140,14 @@ export function ServicesGallery() {
                             {galleryImages.map((image, index) => (
                                 <div
                                     key={index}
-                                    className="px-2 md:px-4 box-border relative"
+                                    className="px-4 box-border relative"
                                     style={{
                                         minWidth: `${100 / itemsPerView}%`,
                                         flex: `0 0 ${100 / itemsPerView}%`,
                                     }}
                                 >
                                     <div
-                                        className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer group/item"
+                                        className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer group/item"
                                         onClick={() => openLightbox(index)}
                                     >
                                         <Image
@@ -176,7 +155,7 @@ export function ServicesGallery() {
                                             alt={image.alt}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover/item:scale-110"
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            sizes="50vw"
                                         />
                                         <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover/item:opacity-100">
                                             <ZoomIn className="text-white w-10 h-10 drop-shadow-md" />
@@ -186,6 +165,31 @@ export function ServicesGallery() {
                             ))}
                         </motion.div>
                     </div>
+                </div>
+
+                {/* Mobile Native Scroll (< md) */}
+                <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-8 scrollbar-hide -mx-4">
+                    {galleryImages.map((image, index) => (
+                        <div
+                            key={index}
+                            className="snap-center shrink-0 w-[85vw]"
+                            onClick={() => openLightbox(index)}
+                        >
+                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-sm">
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    fill
+                                    className="object-cover"
+                                    sizes="90vw"
+                                />
+                                <div className="absolute bottom-3 right-3 bg-black/60 p-2 rounded-full">
+                                    <ZoomIn className="text-white w-4 h-4" />
+                                </div>
+                            </div>
+                            <p className="mt-3 text-sm font-medium text-gray-900 text-center">{image.alt}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
 

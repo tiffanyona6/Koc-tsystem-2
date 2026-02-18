@@ -16,7 +16,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <div className="container-custom py-8 md:py-[80px] lg:py-[100px]">
+            <div className="container-custom section-padding">
                 {/* MOBILE LAYOUT (CUSTOM DESIGN) */}
                 <div className="md:hidden space-y-8 mb-12">
                     {/* Mobile Cards Grid */}
@@ -100,7 +100,7 @@ export default function ContactPage() {
                             {/* Project Banner Section */}
                             <div className="bg-blue-50/50 p-8 border-b border-blue-100 text-left">
                                 <h3 className="text-primary font-bold text-xl mb-3">¿Tiene un proyecto?</h3>
-                                <p className="text-gray-700 leading-relaxed">
+                                <p className="text-gray-800 leading-relaxed">
                                     Solicite una reunión técnica y estudiaremos su caso de forma personalizada.
                                 </p>
                             </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
 
                     {/* Right Column: Form */}
                     <div className="lg:col-span-2">
-                        <p className="text-xl text-gray-600 mb-6 md:hidden">
+                        <p className="text-xl text-gray-800 mb-6 md:hidden">
                             Cuéntenos su proyecto o necesidad y le responderemos con la mayor brevedad.
                         </p>
                         <ContactForm />

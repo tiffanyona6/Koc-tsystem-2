@@ -15,9 +15,15 @@
     font-family: var(--font-poppins);
     color: #171717;
     background-color: #ffffff;
+    overflow-x: hidden;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-montserrat);
     font-weight: 700;
   }
@@ -27,7 +33,7 @@
   .container-custom {
     @apply w-full max-w-[1200px] mx-auto px-4 md:px-5 lg:px-6;
   }
-  
+
   .section-padding {
     @apply py-[60px] md:py-[80px] lg:py-[100px];
   }

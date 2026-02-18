@@ -190,7 +190,8 @@ export default function OasisContext() {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                    {/* Desktop Grid Layout */}
+                    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                         {[
                             { title: "Recuperación energética para ACS", desc: "Aprovechamiento del calor residual para agua caliente sanitaria." },
                             { title: "Tratamiento avanzado de aguas", desc: "Sistemas de filtración y purificación de aguas grises." },
@@ -213,6 +214,30 @@ export default function OasisContext() {
                                 <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors leading-tight">{feature.title}</h3>
                                 <p className="text-gray-600 text-[15px] leading-relaxed font-light">{feature.desc}</p>
                             </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Mobile Accordion Layout */}
+                    <div className="md:hidden flex flex-col bg-white rounded-xl border border-blue-100 shadow-sm overflow-hidden">
+                        {[
+                            { title: "Recuperación energética para ACS", desc: "Aprovechamiento del calor residual para agua caliente sanitaria." },
+                            { title: "Tratamiento avanzado de aguas", desc: "Sistemas de filtración y purificación de aguas grises." },
+                            { title: "Arquitectura anti-fouling", desc: "Diseño que previene la incrustación y mantiene la eficiencia." },
+                            { title: "Sistema Fail-Safe sanitario", desc: "Garantía de separación total entre flujos y seguridad higiénica." },
+                            { title: "Monitorización inteligente", desc: "Control en tiempo real para optimización continua." },
+                            { title: "Diseño robusto y escalable", desc: "Preparado para crecimiento industrial sostenido." }
+                        ].map((feature, index, arr) => (
+                            <details key={index} className={`group ${index !== arr.length - 1 ? 'border-b border-blue-50' : ''}`}>
+                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+                                    <h3 className="text-base font-bold text-gray-900 leading-tight pr-4">{feature.title}</h3>
+                                    <span className="text-primary transform transition-transform duration-300 group-open:rotate-180">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                                    </span>
+                                </summary>
+                                <div className="px-5 pb-5 pt-0 text-gray-600 text-sm font-light leading-relaxed animate-in slide-in-from-top-2 duration-200">
+                                    {feature.desc}
+                                </div>
+                            </details>
                         ))}
                     </div>
                 </div>

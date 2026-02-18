@@ -14,7 +14,7 @@ export function CaeSection() {
                     Certificados de Ahorro Energético (CAE)
                 </h2>
 
-                <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+                <p className="text-lg text-gray-800 max-w-3xl mx-auto mb-8">
                     Gestionamos íntegramente sus CAEs para que monetice sus ahorros energéticos sin trámites complejos.
                     <span className="font-semibold block mt-2">Rentabilidad directa para su industria.</span>
                 </p>

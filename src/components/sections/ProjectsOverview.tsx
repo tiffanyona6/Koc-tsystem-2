@@ -33,11 +33,14 @@ export function ProjectsOverview() {
         <section className="section-padding bg-gray-50">
             <div className="container-custom">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 font-montserrat">
                         Proyectos Destacados
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Casos de éxito donde la innovación técnica genera valor tangible.
+                    </p>
+                    <p className="text-sm text-gray-400 mt-4 max-w-2xl mx-auto font-light">
+                        * Todos los proyectos han sido ejecutados bajo encargo técnico para terceros, a excepción de TARGA.
                     </p>
                 </div>
 
@@ -76,7 +79,7 @@ export function ProjectsOverview() {
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-600 mb-6 flex-grow">
+                                <p className="text-gray-800 mb-6 flex-grow">
                                     {project.description}
                                 </p>
                                 <span className="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">

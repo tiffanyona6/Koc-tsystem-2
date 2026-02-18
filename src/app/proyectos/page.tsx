@@ -62,19 +62,26 @@ export default function ProjectsPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <div key={index} className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-gray-100 transition-all duration-300">
-                            {/* Image Container - Clickable */}
-                            <Link href={project.href} className="relative w-full aspect-video bg-gray-50 overflow-hidden flex items-center justify-center cursor-pointer block">
+                        <div
+                            key={index}
+                            className={`group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-blue-100 hover:border-blue-300 transition-all duration-300 ${index === 0 ? 'md:col-span-2 lg:col-span-3 md:flex-row md:items-center' : ''}`}
+                        >
+                            {/* Image Container */}
+                            <Link
+                                href={project.href}
+                                className={`relative block overflow-hidden cursor-pointer ${index === 0 ? 'w-full md:w-3/5 aspect-video md:aspect-auto md:h-full' : 'w-full aspect-video'}`}
+                            >
                                 {project.image ? (
                                     <Image
                                         src={project.image}
                                         alt={project.title}
                                         fill
+                                        quality={95}
                                         className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"}
                                     />
                                 ) : (
-                                    <div className="flex flex-col items-center justify-center text-gray-300 gap-2">
+                                    <div className="flex flex-col items-center justify-center text-gray-300 gap-2 w-full h-full bg-gray-50">
                                         <ImageIcon className="w-12 h-12 opacity-50" />
                                         <span className="text-xs font-medium uppercase tracking-widest opacity-70">Sin imagen</span>
                                     </div>
@@ -84,21 +91,21 @@ export default function ProjectsPage() {
                             </Link>
 
                             {/* Content */}
-                            <div className="p-6 md:p-8 flex flex-col flex-grow">
+                            <div className={`p-6 md:p-8 flex flex-col flex-grow ${index === 0 ? 'md:w-2/5 md:justify-center md:py-12' : ''}`}>
                                 <div className="text-xs font-bold tracking-wider text-secondary uppercase mb-3">
                                     {project.category}
                                 </div>
                                 <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-tight">
                                     {project.title}
                                 </h2>
-                                <p className="text-gray-600 mb-6 flex-grow line-clamp-3 leading-relaxed">
+                                <p className="text-gray-800 mb-6 flex-grow line-clamp-3 leading-relaxed">
                                     {project.description}
                                 </p>
 
                                 <Link href={project.href} className="mt-auto pt-4 border-t border-gray-50">
-                                    <Button variant="ghost" className="w-full justify-start px-0 text-primary hover:bg-transparent hover:text-primary/80 group/btn gap-2">
-                                        <span className="font-semibold">Ver proyecto</span>
-                                        <ArrowRight className="h-4 w-4 transform group-hover/btn:translate-x-1 transition-transform" />
+                                    <Button className="w-full bg-white text-primary border border-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-lg justify-between group/btn shadow-none h-12 px-6">
+                                        <span className="text-base font-semibold">Ver proyecto</span>
+                                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                                     </Button>
                                 </Link>
                             </div>

@@ -40,8 +40,8 @@ export function ServicesOverview() {
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                     <div className="max-w-2xl">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                            Ingeniería especializada para resultados reales
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 font-montserrat">
+                            Soluciones técnicas para la industria
                         </h2>
                         <p className="text-lg text-gray-600">
                             Transformamos sus retos técnicos en soluciones eficientes y rentables.
@@ -55,11 +55,11 @@ export function ServicesOverview() {
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="group block p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300"
+                            className="group block p-10 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300"
                         >
                             <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors", service.color)}>
                                 <service.icon className="w-7 h-7" />
