@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Placeholder images for Oasis - using the official hero image
 const heroImages = [
-    "/images/oasis-hero-official.png",
-    "/images/oasis-hero-official.png",
-    "/images/oasis-hero-official.png"
+    "/images/projects/proyecto-oasis-project-web-koc.webp",
+    "/images/projects/proyecto-oasis-project-web-koc.webp",
+    "/images/projects/proyecto-oasis-project-web-koc.webp"
 ];
 
 export function CarouselOasis() {

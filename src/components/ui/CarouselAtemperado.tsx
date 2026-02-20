@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Placeholder images for Atemperado
 const heroImages = [
-    "/images/projects/proyecto-sistema-automatico.png",
-    "/images/projects/proyecto-sistema-automatico.png",
-    "/images/projects/proyecto-sistema-automatico.png"
+    "/images/projects/proyecto-sistema automatico-web-koc.webp",
+    "/images/projects/proyecto-sistema automatico-web-koc.webp",
+    "/images/projects/proyecto-sistema automatico-web-koc.webp"
 ];
 
 export function CarouselAtemperado() {

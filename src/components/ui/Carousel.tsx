@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroImages = [
-    "/images/projects/targa.png",
-    "/images/projects/targa.png",
-    "/images/projects/targa.png"
+    "/images/projects/proyecto-targa-web-koc.webp",
+    "/images/projects/proyecto-targa-web-koc.webp",
+    "/images/projects/proyecto-targa-web-koc.webp"
 ];
 
 export function Carousel() {

@@ -2,41 +2,47 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Proyectos Realizados | KOC Technical System",
+    description: "Descubre nuestros proyectos de ingeniería en eficiencia energética, gestión de agua y control térmico industrial. Soluciones a medida con resultados medibles.",
+};
 
 const projects = [
     {
         title: "Oasis Project",
         category: "Ahorro Energía + Agua",
         description: "Soluciones integrales para la optimización energética y gestión eficiente del agua en la industria.",
-        image: "/images/oasis-hero-official.png",
+        image: "/images/projects/proyecto-oasis-project-web-koc.webp",
         href: "/oasis-project",
     },
     {
         title: "TARGA KOC",
         category: "Desinfección",
         description: "Sistema de desinfección por nebulización ultrasónica para entornos críticos.",
-        image: "/images/projects/targa.png",
+        image: "/images/projects/proyecto-targa-web-koc.webp",
         href: "/targa-koc",
     },
     {
         title: "Marlenka 2.0 + Magic Box",
         category: "Control Clima",
         description: "Control integrado de temperatura y humedad para optimización de procesos.",
-        image: "/images/projects/marlenka-magicbox.png",
+        image: "/images/projects/proyecto-marleka-magicbox-web-koc.webp",
         href: "/marlenka-magic-box",
     },
     {
         title: "Sistema TWT",
         category: "Agua",
         description: "Regeneración y reutilización de agua para industria y poblaciones < 20k hab.",
-        image: "/images/projects/twt.png",
+        image: "/images/projects/proyecto-twt-web-koc.webp",
         href: "/sistema-twt",
     },
     {
         title: "Sistema Automático de Atemperado",
-        category: "Resinas",
-        description: "Solución de atemperado de resina para procesos industriales de alta precisión.",
-        image: "/images/projects/proyecto-sistema-automatico.png",
+        category: "Fluidos",
+        description: "Solución de atemperado de fluidos para procesos industriales de alta precisión.",
+        image: "/images/projects/proyecto-sistema automatico-web-koc.webp",
         href: "/sistema-atemperado",
     }
 ];
@@ -60,16 +66,16 @@ export default function ProjectsPage() {
 
             <div className="container-custom section-padding">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex flex-wrap justify-center gap-8">
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className={`group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-blue-100 hover:border-blue-300 transition-all duration-300 ${index === 0 ? 'md:col-span-2 lg:col-span-3 md:flex-row md:items-center' : ''}`}
+                            className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-blue-100 hover:border-blue-300 transition-all duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
                         >
                             {/* Image Container */}
                             <Link
                                 href={project.href}
-                                className={`relative block overflow-hidden cursor-pointer ${index === 0 ? 'w-full md:w-3/5 aspect-video md:aspect-auto md:h-full' : 'w-full aspect-video'}`}
+                                className="relative block overflow-hidden cursor-pointer w-full aspect-video"
                             >
                                 {project.image ? (
                                     <Image
@@ -78,7 +84,7 @@ export default function ProjectsPage() {
                                         fill
                                         quality={95}
                                         className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                        sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                 ) : (
                                     <div className="flex flex-col items-center justify-center text-gray-300 gap-2 w-full h-full bg-gray-50">
@@ -91,7 +97,7 @@ export default function ProjectsPage() {
                             </Link>
 
                             {/* Content */}
-                            <div className={`p-6 md:p-8 flex flex-col flex-grow ${index === 0 ? 'md:w-2/5 md:justify-center md:py-12' : ''}`}>
+                            <div className="p-6 md:p-8 flex flex-col flex-grow">
                                 <div className="text-xs font-bold tracking-wider text-secondary uppercase mb-3">
                                     {project.category}
                                 </div>

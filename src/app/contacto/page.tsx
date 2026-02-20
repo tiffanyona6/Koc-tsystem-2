@@ -1,5 +1,11 @@
 import { ContactForm } from "@/components/layout/ContactForm";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contacto | KOC Technical System",
+    description: "Contacte con nuestro equipo de ingenieros para estudiar su proyecto de eficiencia energética o gestión hídrica. Respuesta técnica en menos de 24h.",
+};
 
 export default function ContactPage() {
     return (

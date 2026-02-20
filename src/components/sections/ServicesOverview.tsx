@@ -36,7 +36,7 @@ const services = [
 
 export function ServicesOverview() {
     return (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-[#F8F9FA]">
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                     <div className="max-w-2xl">
@@ -59,7 +59,7 @@ export function ServicesOverview() {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="group block p-10 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300"
+                            className="group block p-10 rounded-2xl bg-white shadow-sm border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300"
                         >
                             <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors", service.color)}>
                                 <service.icon className="w-7 h-7" />

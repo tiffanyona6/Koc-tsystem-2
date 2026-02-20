@@ -5,6 +5,7 @@ import { ProjectsOverview } from "@/components/sections/ProjectsOverview";
 import { CaeSection } from "@/components/sections/CaeSection";
 import { HomeMetrics } from "@/components/sections/HomeMetrics";
 import { HomeOasysFeatured } from "@/components/sections/HomeOasysFeatured";
+import { HomeGalleryCarousel } from "@/components/sections/HomeGalleryCarousel";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <ServicesOverview />
+      <HomeGalleryCarousel />
       <HomeMetrics />
       <HomeOasysFeatured />
       <ProjectsOverview />

@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Placeholder images for Marlenka - reusing what we have or repeating the single asset
 const heroImages = [
-    "/images/projects/marlenka-magicbox.png",
-    "/images/projects/marlenka-magicbox.png",
-    "/images/projects/marlenka-magicbox.png"
+    "/images/projects/proyecto-marleka-magicbox-web-koc.webp",
+    "/images/projects/proyecto-marleka-magicbox-web-koc.webp",
+    "/images/projects/proyecto-marleka-magicbox-web-koc.webp"
 ];
 
 export function Carousel() {

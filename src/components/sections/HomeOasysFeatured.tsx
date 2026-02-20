@@ -60,7 +60,7 @@ export function HomeOasysFeatured() {
                         <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] max-h-[650px] rounded-3xl shadow-2xl overflow-hidden group">
                             {/* IMAGEN PRINCIPAL - Reemplazar la ruta src por la imagen real */}
                             <img
-                                src="/images/oasis-hero-official.png"
+                                src="/images/projects/proyecto-oasis-project-web-koc.webp"
                                 alt="Infraestructura del proyecto Oasis - Optimización hídrica industrial"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />

@@ -14,27 +14,38 @@ export function MethodologyPhaseCard({ phase, items, index }: PhaseCardProps) {
     return (
         <div
             className={cn(
-                "bg-white rounded-xl shadow-sm border border-gray-100 relative group transition-all duration-300 overflow-hidden md:h-full",
-                // Mobile: Side accent when open. Desktop: Top accent always (or match mobile style if preferred, keeping existing desktop hint)
-                isOpen ? "border-l-4 border-l-primary" : "border-l-4 border-l-transparent md:border-l-0 md:border-t-4 md:border-t-primary",
-                // Hover effect for desktop
-                "md:hover:-translate-y-1 md:hover:shadow-lg"
+                "bg-white rounded-3xl relative group transition-all duration-500 overflow-hidden md:h-full",
+                "border border-gray-100/80 hover:border-primary/20",
+                "shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] hover:shadow-[0_8px_30px_-5px_rgba(6,81,237,0.1)]",
+                isOpen ? "border-primary/20 shadow-[0_8px_30px_-5px_rgba(6,81,237,0.1)]" : ""
             )}
         >
+
+
             {/* Header - Clickable only on mobile */}
             <div
-                className="p-5 md:p-6 flex items-center justify-between cursor-pointer md:cursor-default"
+                className="p-6 md:p-8 flex items-center justify-between cursor-pointer md:cursor-default relative z-10"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="flex items-center gap-3 md:gap-4 text-primary">
-                    <span className="text-2xl md:text-3xl font-bold font-montserrat leading-none">0{index + 1}</span>
-                    <h3 className="text-lg md:text-xl font-semibold md:font-extrabold font-montserrat text-gray-900 md:text-primary">{phase}</h3>
+                <div className="flex items-center gap-4 md:gap-5">
+                    {/* Floating Number Box */}
+                    <div className={cn(
+                        "w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center font-bold text-xl md:text-2xl transition-all duration-500 shadow-sm",
+                        "bg-gradient-to-br from-blue-50 to-blue-100/50 text-primary border border-white",
+                        "md:group-hover:scale-110 md:group-hover:bg-gradient-to-br md:group-hover:from-primary md:group-hover:to-secondary md:group-hover:text-white md:group-hover:shadow-lg",
+                        isOpen ? "scale-110 bg-gradient-to-br from-primary to-secondary text-white shadow-lg" : ""
+                    )}>
+                        {index + 1}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 font-montserrat md:group-hover:text-primary transition-colors duration-300">
+                        {phase}
+                    </h3>
                 </div>
 
                 {/* Mobile Chevron */}
                 <div className={cn(
-                    "md:hidden transition-transform duration-300 text-gray-300",
-                    isOpen ? "rotate-180 text-primary" : "rotate-0"
+                    "md:hidden transition-transform duration-500 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400",
+                    isOpen ? "rotate-180 bg-blue-50 text-primary" : ""
                 )}>
                     <ChevronDown className="w-5 h-5" />
                 </div>
@@ -42,14 +53,14 @@ export function MethodologyPhaseCard({ phase, items, index }: PhaseCardProps) {
 
             {/* Content - Collapsible on Mobile, Always Visible on Desktop */}
             <div className={cn(
-                "px-5 pb-5 md:px-6 md:pb-6 md:block",
-                isOpen ? "block" : "hidden"
+                "px-6 pb-6 md:px-8 md:pb-8 relative z-10 md:block transition-all duration-500",
+                isOpen ? "block animate-in slide-in-from-top-2 fade-in-0" : "hidden"
             )}>
-                <ul className="space-y-2 md:space-y-3 pt-2 md:pt-0 border-t md:border-t-0 border-gray-50 md:border-none">
+                <ul className="space-y-3 md:space-y-4 pt-2 md:pt-4 border-t border-gray-100 md:border-t-2 md:border-dashed">
                     {items.map((item, i) => (
-                        <li key={i} className="text-sm md:text-sm text-gray-600 flex items-start gap-2 pt-2 md:pt-0">
-                            <div className="w-1.5 h-1.5 bg-primary/40 rounded-full mt-1.5 shrink-0"></div>
-                            {item}
+                        <li key={i} className="text-base text-gray-600 flex items-start gap-4">
+                            <div className="w-2 h-2 rounded-full bg-primary/40 mt-2 shrink-0 md:group-hover:bg-secondary transition-colors duration-300 drop-shadow-sm"></div>
+                            <span className="font-medium">{item}</span>
                         </li>
                     ))}
                 </ul>

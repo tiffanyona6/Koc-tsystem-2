@@ -10,12 +10,12 @@ const images = [
         alt: "Equipo KOC en instalaciones industriales",
     },
     {
-        src: "/images/about/oficina-web-koc.webp",
-        alt: "Oficina técnica de ingeniería KOC",
+        src: "/images/about/montaje-silos-web-koc.webp",
+        alt: "Montaje de silos",
     },
     {
-        src: "/images/projects/marlenka-magicbox.png",
-        alt: "Detalle de proceso industrial",
+        src: "/images/about/equipo-trabajo-web-koc.webp",
+        alt: "Equipo KOC de trabajo en acción",
     }
 ];
 

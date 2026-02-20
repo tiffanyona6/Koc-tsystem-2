@@ -4,12 +4,12 @@ import { ServicesGridCarousel } from "@/components/ui/ServicesGridCarousel";
 import { ProjectCarousel } from "@/components/ui/ProjectCarousel";
 
 const galleryImages = [
-    { src: "/images/projects/marlenka-magicbox.png", alt: "Proyecto Marlenka y Magic Box" },
-    { src: "/images/projects/proyecto-sistema-automatico.png", alt: "Sistema Automático de Atemperado" },
-    { src: "/images/projects/targa.png", alt: "Proyecto Targa MG" },
-    { src: "/images/projects/twt.png", alt: "Sistema TWT - Agua 4.0" },
-    { src: "/images/projects/marlenka-magicbox.png", alt: "Detalle Instalación Industrial" },
-    { src: "/images/projects/targa.png", alt: "Tecnología de Nebulización" },
+    { src: "/images/projects/proyecto-marleka-magicbox-web-koc.webp", alt: "Proyecto Marlenka y Magic Box" },
+    { src: "/images/projects/proyecto-sistema automatico-web-koc.webp", alt: "Sistema Automático de Atemperado" },
+    { src: "/images/projects/proyecto-targa-web-koc.webp", alt: "Proyecto Targa MG" },
+    { src: "/images/projects/proyecto-twt-web-koc.webp", alt: "Sistema TWT - Agua 4.0" },
+    { src: "/images/projects/proyecto-marleka-magicbox-web-koc.webp", alt: "Detalle Instalación Industrial" },
+    { src: "/images/projects/proyecto-targa-web-koc.webp", alt: "Tecnología de Nebulización" },
 ];
 
 export function ServicesGallery() {

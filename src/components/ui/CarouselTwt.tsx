@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Placeholder images for TWT - reusing what we have
 const heroImages = [
-    "/images/projects/twt.png",
-    "/images/projects/twt.png",
-    "/images/projects/twt.png"
+    "/images/projects/proyecto-twt-web-koc.webp",
+    "/images/projects/proyecto-twt-web-koc.webp",
+    "/images/projects/proyecto-twt-web-koc.webp"
 ];
 
 export function CarouselTwt() {
