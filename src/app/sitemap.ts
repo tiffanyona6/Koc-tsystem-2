@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 // Change this to your actual domain
 const baseUrl = 'https://www.koctsystem.com'
 

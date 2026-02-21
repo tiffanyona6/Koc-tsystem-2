@@ -17,14 +17,14 @@ const projects = [
         category: "Control Clima",
         description: "Control integrado de temperatura y humedad para optimización de procesos.",
         image: "/images/projects/proyecto-marleka-magicbox-web-koc.webp",
-        href: "/proyectos",
+        href: "/marlenka-magic-box",
     },
     {
         title: "Sistema TWT",
         category: "Agua",
         description: "Regeneración y reutilización de agua para industria y poblaciones < 20k hab.",
         image: "/images/projects/proyecto-twt-web-koc.webp",
-        href: "/proyectos",
+        href: "/sistema-twt",
     },
 ];
 

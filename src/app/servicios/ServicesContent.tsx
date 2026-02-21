@@ -362,14 +362,15 @@ export default function ServicesPage() {
 
 
             {/* 7. QUICK CONTACT */}
-            <section className="py-16 md:py-20 bg-primary text-white">
+            <section className="section-padding bg-primary text-white text-center">
                 <div className="container-custom">
-                    <div className="text-center">
-                        <h2 className="text-3xl font-bold text-white mb-8 font-montserrat">Mejora el rendimiento de tu instalación</h2>
-                        <Link href="/contacto">
-                            <Button size="lg" className="px-10 bg-white text-primary border-2 border-white hover:bg-transparent hover:text-white transition-all duration-300 shadow-lg font-semibold">Solicitar diagnóstico técnico</Button>
-                        </Link>
-                    </div>
+                    <h2 className="text-2xl md:text-4xl font-bold mb-6">Mejora el rendimiento de tu instalación</h2>
+                    <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                        Contacte con nuestro equipo para una valoración técnica sin compromiso.
+                    </p>
+                    <Link href="/contacto">
+                        <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 h-auto">Solicitar diagnóstico técnico</Button>
+                    </Link>
                 </div>
             </section>
 

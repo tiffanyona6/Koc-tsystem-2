@@ -31,7 +31,7 @@ export default function AboutPage() {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
                         {/* Left Column - Content */}
-                        <div className="order-1 lg:order-1 space-y-6 md:space-y-8">
+                        <div className="order-2 lg:order-1 space-y-6 md:space-y-8">
                             <div>
                                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight font-montserrat">
                                     Cómo intervenimos en la industria
@@ -53,7 +53,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* Right Column - Image Gallery */}
-                        <div className="order-2 lg:order-2 w-full mt-8 lg:mt-0">
+                        <div className="order-1 lg:order-2 w-[calc(100%+2rem)] -ml-4 sm:w-full sm:ml-0 lg:w-full mt-0 lg:mt-0">
                             <AboutImageGallery />
                         </div>
                     </div>

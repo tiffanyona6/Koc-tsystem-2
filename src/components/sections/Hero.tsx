@@ -14,7 +14,7 @@ export function Hero() {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to right, rgba(15,30,58,0.85), rgba(15,30,58,0.55))' }} />
                 <Image
-                    src="/images/hero/hero-bg.png"
+                    src="/images/hero/hero-bg.webp"
                     alt="KOC Hero Background"
                     fill
                     className="object-cover"
@@ -31,7 +31,7 @@ export function Hero() {
                     >
                         <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 mb-6 md:mb-6 text-center md:text-left">
                             <div className="h-24 w-1.5 bg-primary rounded-full hidden md:block shadow-[0_0_15px_rgba(56,76,156,0.5)] mt-2"></div>
-                            <h1 className="text-[26px] md:text-[52px] lg:text-[64px] font-bold font-montserrat leading-tight md:leading-[1.1] drop-shadow-lg tracking-tight">
+                            <h1 className="text-[34px] md:text-[52px] lg:text-[64px] font-bold font-montserrat leading-tight md:leading-[1.1] drop-shadow-lg tracking-tight">
                                 Soluciones técnicas de <br className="hidden lg:block" />
                                 alto rendimiento industrial
                             </h1>

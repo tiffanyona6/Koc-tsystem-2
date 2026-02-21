@@ -342,15 +342,15 @@ export default function MarlenkaPage() {
                         variants={fadeInUp}
                         className="max-w-4xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-[42px] font-bold mb-4 font-montserrat">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-6">
                             Estandarice su producción global
                         </h2>
-                        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                        <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
                             Magic Box y Marlenka 2.0 son la solución para eliminar la variabilidad climática de sus procesos industriales.
                         </p>
 
                         <Link href="/contacto">
-                            <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 h-auto shadow-xl font-bold">
+                            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 h-auto">
                                 Solicitar estudio de implantación
                             </Button>
                         </Link>

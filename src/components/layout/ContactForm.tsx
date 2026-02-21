@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2, AlertCircle } from "lucide-react";
+import Link from "next/link";
 
 export function ContactForm() {
     const [formData, setFormData] = useState({
@@ -201,7 +202,7 @@ export function ContactForm() {
                     />
                 </div>
                 <label htmlFor="rgpd" className="text-sm text-gray-600">
-                    He leído y acepto la política de privacidad y el tratamiento de mis datos personales.
+                    He leído y acepto la <Link href="/legal/privacidad" target="_blank" className="text-primary hover:underline font-medium">política de privacidad</Link> y el tratamiento de mis datos personales.
                 </label>
             </div>
 

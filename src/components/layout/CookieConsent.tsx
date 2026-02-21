@@ -50,7 +50,7 @@ export function CookieConsent() {
                         href="/legal/cookies"
                         className="px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 text-center text-sm transition-colors"
                     >
-                        Configurar
+                        Más información
                     </Link>
                     <button
                         onClick={acceptCookies}

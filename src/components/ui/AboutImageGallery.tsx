@@ -97,7 +97,7 @@ export function AboutImageGallery() {
                     {images.map((img, index) => (
                         <div
                             key={index}
-                            className="min-w-full flex-shrink-0 snap-center relative aspect-[4/5] rounded-2xl overflow-hidden shadow-sm"
+                            className="min-w-full flex-shrink-0 snap-center relative aspect-[4/3] rounded-none sm:rounded-2xl overflow-hidden shadow-sm"
                         >
                             <Image
                                 src={img.src}
